@@ -25,10 +25,9 @@ int FindLCS(string source, string target)
             }
         }
 
-    PrintLCS(matrix, source);
-
     if (source.Length <= 80)
     {
+        PrintLCS(matrix, source);
         PrintMatrix(matrix, source, target);
     }
 
