@@ -6,11 +6,13 @@ void whatFlavors(List<int> cost, int money)
 {
     Dictionary<int, int> pastCosts = new Dictionary<int, int>();
 
+    var result = "";
     for (int i = 0; i < cost.Count; i++)
     {
         if (pastCosts.ContainsKey(money - cost[i]))
         {
-            Console.WriteLine($"{pastCosts[money - cost[i]]} {i + 1}");
+            result = $"{pastCosts[money - cost[i]]} {i + 1}";
+            break;
         }
         else if(!pastCosts.ContainsKey(cost[i]))
         {
@@ -18,6 +20,8 @@ void whatFlavors(List<int> cost, int money)
             pastCosts.Add(cost[i], i + 1);
         }
     }
+
+    Console.WriteLine(result);
 }
 
 string[][] inputs = new[]{
